@@ -1,4 +1,5 @@
 import React from 'react';
+import LandingImage from '../assets/Landing.jpg';
 
 const categories = [
     { id: 1, name: 'Electronics', icon: '📱', count: 150 },
@@ -71,7 +72,7 @@ const Home: React.FC = () => {
                     <button className="cta-button">Shop Now</button>
                 </div>
                 <div className="landing-image">
-                    <img src="/src/assets/Landing.jpg" alt="Amazing products" />
+                    <img src={LandingImage} alt="Amazing products" />
                 </div>
             </section>
 
