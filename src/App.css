@@ -484,6 +484,13 @@ body {
     opacity: 0.1;
     z-index: 1;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    min-height: 70vh;
+  }
 }
 
 .landing-content {
@@ -491,6 +498,11 @@ body {
   max-width: 600px;
   z-index: 2;
   position: relative;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 
 .landing-title {
@@ -501,6 +513,12 @@ body {
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -509,6 +527,16 @@ body {
   margin-bottom: 2rem;
   opacity: 0.9;
   line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .cta-button {
@@ -528,6 +556,18 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
   }
+
+  @media (max-width: 768px) {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 280px;
+  }
 }
 
 .landing-image {
@@ -546,7 +586,9 @@ body {
   }
 
   @media (max-width: 768px) {
-    display: none;
+    display: flex;
+    order: -1;
+    margin-bottom: 2rem;
   }
 }
 
