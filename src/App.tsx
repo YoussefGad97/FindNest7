@@ -7,6 +7,7 @@ import Deals from './pages/Deals';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 import './App.css';
 
 // Component to handle animations that needs location context
@@ -104,6 +105,7 @@ function App() {
             <Router>
                 <AppContent />
             </Router>
+            <BackToTop />
         </ThemeProvider>
     );
 }

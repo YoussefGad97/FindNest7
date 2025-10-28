@@ -1,5 +1,5 @@
 import React from 'react';
-import './BackToTop.module.scss';
+import styles from './BackToTop.module.scss';
 
 const BackToTop: React.FC = () => {
     const scrollToTop = () => {
@@ -11,7 +11,7 @@ const BackToTop: React.FC = () => {
 
     return (
         <button
-            className="back-to-top"
+            className={styles.backToTop}
             onClick={scrollToTop}
             aria-label="Back to top"
         >
