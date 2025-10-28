@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
 const Footer: React.FC = () => {
@@ -12,31 +13,31 @@ const Footer: React.FC = () => {
         </div>
         <div className={styles.footerCenter}>
           <nav className={styles.quickLinks}>
-            <a href="#products" className={styles.quickLink}>
+            <Link to="/#products" className={styles.quickLink}>
               Products
-            </a>
-            <a href="/categories" className={styles.quickLink}>
+            </Link>
+            <Link to="/categories" className={styles.quickLink}>
               Categories
-            </a>
-            <a href="/deals" className={styles.quickLink}>
+            </Link>
+            <Link to="/deals" className={styles.quickLink}>
               Deals
-            </a>
-            <a href="/about" className={styles.quickLink}>
-              About
-            </a>
+            </Link>
+            <Link to="/contact" className={styles.quickLink}>
+              Contact
+            </Link>
           </nav>
         </div>
         <div className={styles.footerRight}>
           <nav className={styles.footerNav}>
-            <a href="/privacy" className={styles.footerLink}>
+            <Link to="/privacy" className={styles.footerLink}>
               Privacy
-            </a>
-            <a href="/terms" className={styles.footerLink}>
+            </Link>
+            <Link to="/terms" className={styles.footerLink}>
               Terms
-            </a>
-            <a href="/contact" className={styles.footerLink}>
+            </Link>
+            <Link to="/contact" className={styles.footerLink}>
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
