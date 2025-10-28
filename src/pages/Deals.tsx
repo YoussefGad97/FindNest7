@@ -1,10 +1,14 @@
 import React from 'react';
+import product1 from '../assets/Product1.png';
+import product2 from '../assets/Product2.png';
+import product3 from '../assets/Product3.png';
+import product4 from '../assets/Product4.png';
 
 const deals = [
     {
         id: 1,
         name: 'Wireless Bluetooth Headphones',
-        imageUrl: 'https://via.placeholder.com/300x300',
+        imageUrl: product1,
         originalPrice: '$129.99',
         dealPrice: '$89.99',
         discount: '31%',
@@ -17,7 +21,7 @@ const deals = [
     {
         id: 2,
         name: 'Smart Fitness Watch',
-        imageUrl: 'https://via.placeholder.com/300x300',
+        imageUrl: product2,
         originalPrice: '$249.99',
         dealPrice: '$199.99',
         discount: '20%',
@@ -30,7 +34,7 @@ const deals = [
     {
         id: 3,
         name: 'Organic Skincare Set',
-        imageUrl: 'https://via.placeholder.com/300x300',
+        imageUrl: product3,
         originalPrice: '$99.99',
         dealPrice: '$79.99',
         discount: '20%',
@@ -43,7 +47,7 @@ const deals = [
     {
         id: 4,
         name: 'Coffee Maker Deluxe',
-        imageUrl: 'https://via.placeholder.com/300x300',
+        imageUrl: product4,
         originalPrice: '$199.99',
         dealPrice: '$149.99',
         discount: '25%',
