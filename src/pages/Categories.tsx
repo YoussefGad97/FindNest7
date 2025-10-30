@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { featuredProducts } from './products';
 
 const categories = [
     { id: 1, name: 'Electronics', icon: '📱', count: 150, description: 'Latest gadgets and tech accessories' },
@@ -12,24 +13,66 @@ const categories = [
 ];
 
 const Categories: React.FC = () => {
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+    const handleCategoryClick = (categoryName: string) => {
+        setSelectedCategory(categoryName);
+    };
+
+    const filteredProducts = selectedCategory
+        ? featuredProducts.filter(product => product.category === selectedCategory)
+        : featuredProducts;
+
     return (
-        <div className="home-container">
-            <section className="categories-section animate-on-scroll">
-                <div className="container">
-                    <h1 className="section-title">Shop by Category</h1>
-                    <p className="section-subtitle">Explore our wide range of product categories</p>
-                    <div className="categories-grid categories-page-grid">
-                        {categories.map((category, index) => (
-                            <div key={category.id} className={`category-card animate-scale`} style={{ animationDelay: `${index * 0.1}s` }}>
-                                <div className="category-icon">{category.icon}</div>
-                                <h3 className="category-name">{category.name}</h3>
-                                <p className="category-description">{category.description}</p>
-                                <p className="category-count">{category.count} products</p>
+        <div className="categories-page-container">
+            <aside className="filters-sidebar">
+                <h2 className="filters-title">Categories</h2>
+                <ul className="filters-list">
+                    <li
+                        className={`filter-item ${selectedCategory === null ? 'active' : ''}`}
+                        onClick={() => setSelectedCategory(null)}
+                    >
+                        All
+                    </li>
+                    {categories.map(category => (
+                        <li
+                            key={category.id}
+                            className={`filter-item ${selectedCategory === category.name ? 'active' : ''}`}
+                            onClick={() => handleCategoryClick(category.name)}
+                        >
+                            {category.name}
+                        </li>
+                    ))}
+                </ul>
+            </aside>
+            <main className="products-gallery">
+                <h1 className="section-title">
+                    {selectedCategory ? `${selectedCategory} Products` : 'All Products'}
+                </h1>
+                <div className="products-grid categories-product-grid">
+                    {filteredProducts.map((product, index) => (
+                        <div key={product.id} className={`product-card animate-scale`} style={{ animationDelay: `${index * 0.1}s` }}>
+                            {product.badge && <div className="product-badge">{product.badge}</div>}
+                            <img src={product.imageUrl} alt={product.name} className="product-image" />
+                            <div className="product-info">
+                                <h3 className="product-name">{product.name}</h3>
+                                <div className="product-rating">
+                                    <span className="stars">{'★'.repeat(Math.floor(product.rating))}{'☆'.repeat(5 - Math.floor(product.rating))}</span>
+                                    <span className="rating-text">{product.rating} ({product.reviews})</span>
+                                </div>
+                                <div className="product-pricing">
+                                    <span className="current-price">{product.price}</span>
+                                    <span className="original-price">{product.originalPrice}</span>
+                                </div>
+                                <p className="product-category">{product.category}</p>
+                                <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer" className="product-link">
+                                    View on Amazon
+                                </a>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
-            </section>
+            </main>
         </div>
     );
 };

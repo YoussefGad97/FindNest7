@@ -138,6 +138,32 @@
   border-bottom: 1px solid var(--neutral-gray-200);
 }
 
+[data-theme="light"] .filters-sidebar {
+  background: var(--bg-secondary-light);
+  border: 1px solid var(--neutral-gray-200);
+}
+
+[data-theme="light"] .filter-item {
+  color: var(--text-primary-light);
+}
+
+[data-theme="light"] .filter-item:hover {
+  background-color: var(--bg-tertiary-light);
+}
+
+[data-theme="light"] .filter-item.active {
+  background-color: var(--brand-primary);
+  color: var(--neutral-white);
+}
+
+[data-theme="light"] .categories-page-container {
+  background-color: var(--bg-primary-light);
+}
+
+[data-theme="light"] .products-gallery .section-title {
+  color: var(--text-primary-light);
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -870,5 +896,93 @@ body {
   .categories-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+}
+
+/* Categories Page Layout */
+.categories-page-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.filters-sidebar {
+  width: 250px;
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.filters-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.filter-item:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.filter-item.active {
+  background-color: var(--brand-primary);
+  color: var(--neutral-white);
+  font-weight: 600;
+}
+
+.products-gallery {
+  flex: 1;
+}
+
+.categories-product-grid {
+  justify-content: start; /* Prevents single item from stretching */
+}
+
+.categories-product-grid .product-card {
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .categories-page-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .filters-sidebar {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .filters-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .filters-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .filter-item {
+    border: 1px solid var(--neutral-gray-300);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .filter-item.active {
+    border-color: var(--brand-primary);
   }
 }
