@@ -18,7 +18,7 @@ const Categories: React.FC = () => {
                 <div className="container">
                     <h1 className="section-title">Shop by Category</h1>
                     <p className="section-subtitle">Explore our wide range of product categories</p>
-                    <div className="categories-grid">
+                    <div className="categories-grid categories-page-grid">
                         {categories.map((category, index) => (
                             <div key={category.id} className={`category-card animate-scale`} style={{ animationDelay: `${index * 0.1}s` }}>
                                 <div className="category-icon">{category.icon}</div>
